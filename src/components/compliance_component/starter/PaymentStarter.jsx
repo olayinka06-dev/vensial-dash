@@ -66,21 +66,7 @@ const PaymentStarter = ({handleContinue}) => {
                     <option value="">UBA</option>
                 </select>
               </div>
-              <div>
-                <label
-                  htmlFor="identification"
-                  className="block mb-2 text-sm font-medium text-gray-900  "
-                >
-                    description  <span className="text-[rgba(0,0,0,0.10)]">(optional)</span>
-                </label>
-                <input
-                  type="email"
-                  id="identification"
-                  className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
-                  placeholder="Withdraw"
-                  required
-                />
-              </div>
+
             </div>
     
             <div className="flex justify-end">

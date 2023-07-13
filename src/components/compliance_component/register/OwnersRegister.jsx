@@ -170,44 +170,52 @@ const OwnersRegister = ({ handleSwitchReg }) => {
               required
             />
           </div>
-          <div>
-            <label
-              htmlFor="identification"
-              className="block mb-2 text-sm font-medium text-gray-900  "
-            >
-              means of identification <span className="text-red-500">*</span>
-            </label>
+          <div className="grid gap-6 mb-6 md:grid-cols-2">
+            <div>
+              <label
+                htmlFor="identification"
+                className="block mb-2 text-sm font-medium text-gray-900  "
+              >
+                means of identification <span className="text-red-500">*</span>
+              </label>
 
-            <input
-              type="text"
-              id="identification"
-              value={userDetails.identification}
-              name="identification"
-              onChange={handleChangeInput}
-              className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
-              placeholder="NIN Card"
-              required
-            />
-          </div>
+              <select
+                type="text"
+                id="identification"
+                value={userDetails.identification}
+                name="identification"
+                onChange={handleChangeInput}
+                className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
+                // placeholder="NIN Card"
+                required
+              >
+                <option value="NIN Payment">NIN Payment</option>
+                <option value="Voters Card">Voters Card</option>
+                <option value="International Passport">
+                  International Passport
+                </option>
+              </select>
+            </div>
 
-          <div>
-            <label
-              htmlFor="nin_number"
-              className="block mb-2 text-sm font-medium text-gray-900  "
-            >
-              Nin Number <span className="text-red-500">*</span>
-            </label>
+            <div>
+              <label
+                htmlFor="nin_number"
+                className="block mb-2 text-sm font-medium text-gray-900  "
+              >
+                ID Number <span className="text-red-500">*</span>
+              </label>
 
-            <input
-              type="text"
-              id="nin_number"
-              value={userDetails.nin_number}
-              name="nin_number"
-              onChange={handleChangeInput}
-              className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
-              placeholder="3401406477"
-              required
-            />
+              <input
+                type="text"
+                id="nin_number"
+                value={userDetails.nin_number}
+                name="nin_number"
+                onChange={handleChangeInput}
+                className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
+                placeholder="3401406477"
+                required
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-3">
