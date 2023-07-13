@@ -7,7 +7,6 @@ const ContactInfoRegister = ({handleContinue}) => {
     business_address: '',
     dispute_email: '',
     website_link: '',
-    street_address: '',
     tax_id: '',
   });
 
@@ -147,93 +146,13 @@ const ContactInfoRegister = ({handleContinue}) => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
-          <h3 className="text-[20px] font-[600]">registration address</h3>
-          <div className="grid gap-6 mb-6 md:grid-cols-2">
-            <div>
-              <label
-                htmlFor="nationality"
-                className="block mb-2 text-sm font-medium text-gray-900  "
-              >
-                country <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="nationality"
-                className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
-                placeholder="Startups"
-                required
-              >
-                <option value="">nigeria</option>
-                <option value="">nigeria</option>
-                <option value="">nigeria</option>
-                <option value="">nigeria</option>
-              </select>
-            </div>
-            <div>
-              <label
-                htmlFor="state"
-                className="block mb-2 text-sm font-medium text-gray-900  "
-              >
-                Region / province <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="state"
-                className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
-                placeholder="Startups"
-                required
-              >
-                <option value="">Lagos</option>
-                <option value="">Lagos</option>
-                <option value="">Lagos</option>
-                <option value="">Lagos</option>
-              </select>
-            </div>
-            <div>
-              <label
-                htmlFor="city"
-                className="block mb-2 text-sm font-medium text-gray-900  "
-              >
-                city <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="city"
-                className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
-                placeholder="Startups"
-                required
-              >
-                <option value="">Lagos</option>
-                <option value="">Lagos</option>
-                <option value="">Lagos</option>
-                <option value="">Lagos</option>
-              </select>
-            </div>
-            <div>
-            <label
-              htmlFor="street_address"
-              className="block mb-2 text-sm font-medium text-gray-900  "
-            >
-              Stret Address <span className="text-red-500">*</span>
-            </label>
 
-            <input
-              type="text"
-              id="street_address"
-              value={userDetails.street_address}
-              name='street_address'
-              onChange={handleChangeInput}
-              className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
-              placeholder="20B Taiwo Road"
-              required
-            />
-          </div>
-          </div>
-        </div>
 
         <div className="flex justify-end">
           <button
             type="submit"
             onClick={handleContinue}
-            disabled={!userDetails.business_address || !userDetails.business_email || !userDetails.tax_id || !userDetails.dispute_email || !userDetails.street_address || !userDetails.website_link ? true : false}
+            disabled={!userDetails.business_address || !userDetails.business_email || !userDetails.tax_id || !userDetails.dispute_email || !userDetails.website_link ? true : false}
             className="text-white bg-cyan-400 hover:bg-white hover:border hover:text-cyan-400 focus:ring-4 focus:outline-none focus:ring-cyan-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
             save change

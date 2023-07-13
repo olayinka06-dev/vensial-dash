@@ -1,6 +1,6 @@
-"use client"
-import React, { useState } from 'react';
-import optionContent from '../starter/Data';
+"use client";
+import React, { useState } from "react";
+import optionContent from "../starter/Data";
 
 const ComplianceBusinessRegister = ({
   selectedOption,
@@ -9,15 +9,16 @@ const ComplianceBusinessRegister = ({
 }) => {
   const [currentOption, setCurrentOption] = useState(0);
   const [userDetails, setUserDetails] = useState({
-    trade_name: '',
-    description: '',
-    legal_business: ''
+    trade_name: "",
+    description: "",
+    legal_business: "",
+    street_address: "",
   });
 
   const handleChangeInput = (e) => {
-    const {value, name} = e.target;
-    setUserDetails((prevData)=>({...prevData, [name]: value}));
-  }
+    const { value, name } = e.target;
+    setUserDetails((prevData) => ({ ...prevData, [name]: value }));
+  };
 
   const optionData = [
     "Co Operative",
@@ -34,8 +35,7 @@ const ComplianceBusinessRegister = ({
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-
-  }
+  };
 
   return (
     <div className="animation p-12 h-auto mb-4 rounded-2xl bg-white shadow capitalize">
@@ -170,7 +170,7 @@ const ComplianceBusinessRegister = ({
               <input
                 type="text"
                 id="legal_business"
-                name='legal_business'
+                name="legal_business"
                 onChange={handleChangeInput}
                 value={userDetails.legal_business}
                 className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
@@ -197,6 +197,83 @@ const ComplianceBusinessRegister = ({
                 <option value="">items 1</option>
               </select>
             </div>
+
+            <div>
+              <label
+                htmlFor="nationality"
+                className="block mb-2 text-sm font-medium text-gray-900  "
+              >
+                country <span className="text-red-500">*</span>
+              </label>
+              <select
+                id="nationality"
+                className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
+                placeholder="Startups"
+                required
+              >
+                <option value="">nigeria</option>
+                <option value="">nigeria</option>
+                <option value="">nigeria</option>
+                <option value="">nigeria</option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="state"
+                className="block mb-2 text-sm font-medium text-gray-900  "
+              >
+                Region / province <span className="text-red-500">*</span>
+              </label>
+              <select
+                id="state"
+                className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
+                placeholder="Startups"
+                required
+              >
+                <option value="">Lagos</option>
+                <option value="">Lagos</option>
+                <option value="">Lagos</option>
+                <option value="">Lagos</option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="city"
+                className="block mb-2 text-sm font-medium text-gray-900  "
+              >
+                city <span className="text-red-500">*</span>
+              </label>
+              <select
+                id="city"
+                className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
+                placeholder="Startups"
+                required
+              >
+                <option value="">Lagos</option>
+                <option value="">Lagos</option>
+                <option value="">Lagos</option>
+                <option value="">Lagos</option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="street_address"
+                className="block mb-2 text-sm font-medium text-gray-900  "
+              >
+                Stret Address <span className="text-red-500">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="street_address"
+                value={userDetails.street_address}
+                name="street_address"
+                onChange={handleChangeInput}
+                className="block w-full p-4 text-gray-900 border border-gray-300 rounded-2xl bg-white sm:text-md focus:cyan-400 focus:cyan-400"
+                placeholder="20B Taiwo Road"
+                required
+              />
+            </div>
           </div>
         </div>
 
@@ -204,7 +281,14 @@ const ComplianceBusinessRegister = ({
           <button
             type="submit"
             onClick={handleContinue}
-            disabled={!userDetails.description || !userDetails.trade_name || !userDetails.legal_business ? true : false}
+            disabled={
+              !userDetails.description ||
+              !userDetails.trade_name ||
+              !userDetails.street_address ||
+              !userDetails.legal_business
+                ? true
+                : false
+            }
             className="text-white bg-cyan-400 hover:bg-white hover:border hover:text-cyan-400 focus:ring-4 focus:outline-none focus:ring-cyan-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
             Save Changes
