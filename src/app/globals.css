@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --reflect-color: #FBFBFB;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+input, select, textarea{
+  outline: none !important;
+}
+/* input[] */
+button{
+  text-transform: capitalize !important;
+}
+body {
+  color: #000;
+  background: var(--reflect-color, #FBFBFB);
+}
+.animation{
+  display: block;
+  animation: animate .5s ease-in-out;
+}
+@keyframes animate {
+  0%{
+    display: none;
+    opacity: 0;
+  }
+  1%{
+    display: block;
+    opacity: 0;
+  }
+  100%{
+    display: block;
+    opacity: 1;
+  }
+}
+
+.filter_blur{
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, .3);
+}
+
+
+/* For WebKit browsers (Chrome, Safari) */
+.scroll_bar::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 3px;
+}
+
+.scroll_bar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.scroll_bar::-webkit-scrollbar-thumb {
+  background: #00CCFF;
+  border-radius: 3px;
+}
+
+.scroll_bar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
